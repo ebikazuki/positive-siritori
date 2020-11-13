@@ -1,0 +1,16 @@
+<!-- <p id="notice"><%= notice %></p> -->
+
+<h2 class="text-white-75 font-weight-light">しりとり成功！</h2> 
+
+<p class="text-white-75 font-weight-light">
+  <%= @siritori.word %>
+</p>
+
+<p class="text-white-75 font-weight-light">
+  <strong>ポジティブ度:</strong>
+  <%= (@siritori.score * 100).to_i %>%
+</p>
+
+<!-- <%= link_to 'Edit', edit_siritori_path(@siritori) %> -->
+<%= link_to 'Back', new_siritori_path %>|
+<%= link_to 'History', siritoris_path %>

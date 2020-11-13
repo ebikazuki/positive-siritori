@@ -1,0 +1,16 @@
+
+
+<% if defined? @siritori_last.word %>
+    <p class="text-white-75 font-weight-light mb-5">ポジティブワードでしりとりをつないでください</p>
+    <p class="text-white-75 font-weight-light"><strong><%= @siritori_last.word %></strong></ｐ>
+    <p class="text-white-75 font-weight-light"><strong>↓</strong></ｐ>
+<% end %>
+<%= render 'form', siritori: @siritori %>
+<br>
+<br>
+
+<% if defined? @siritori_last.word %>
+    <%= link_to 'History', siritoris_path %>
+<% else %>
+    <%= link_to 'Back', new_siritori_path %>
+<% end %>

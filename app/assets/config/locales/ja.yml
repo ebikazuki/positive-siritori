@@ -1,0 +1,6 @@
+ja:
+  activerecord:
+    attributes:
+      siritori:
+        word: ワード
+        score: ポジティブ率 

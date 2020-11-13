@@ -1,0 +1,27 @@
+<%= form_with(model: siritori, local: true) do |form| %>
+
+  
+
+  <% if siritori.errors.any? %>
+    <div id="error_explanation">
+    <h2 class="text-white-75 font-weight-light">しりとり失敗！</h2> 
+
+      <ul>
+        <% siritori.errors.full_messages.each do |message| %>
+          <li class="text-white-75 font-weight-light"><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% else %>
+
+  <div class="field">
+    <%= form.text_field :word, placeholder:"ひらがな入力" %>
+  </div>
+
+  <br>
+
+  <div class="actions">
+    <%= form.submit button_text %>
+  </div>
+  <% end %>
+<% end %>

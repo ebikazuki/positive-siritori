@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+
+<table>
+  <thead>
+    <tr>
+      <th class="text-white">キーワード</th>
+      <th class="text-white">ポジティブ度</th>
+      <th class="text-white">作成日</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @siritoris.each do |siritori| %>
+      <tr>
+        <td class="text-white"><%= siritori.word %></td>
+        <td class="text-white"><%= (siritori.score * 100).to_i %>%</td>
+        <td class="text-white"><%= siritori.created_at.to_s(:datetime_jp) %></td>
+        <!-- <td><%= link_to 'Show', siritori %></td> -->
+        <!-- <td><%= link_to 'Edit', edit_siritori_path(siritori) %></td> -->
+        <!-- <td><%= link_to 'Destroy', siritori, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= paginate @siritoris %>
+<br>
+
+<%= link_to 'Back', new_siritori_path %>
